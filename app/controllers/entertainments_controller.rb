@@ -1,8 +1,8 @@
 class EntertainmentsController < ApplicationController
 
 
-    def show
-        @entertainment = Entertainment.find(params[:id])
+    def index
+        @entertainment = Entertainment.all
     end
 
 end
