@@ -1,0 +1,9 @@
+<h1>Add a Destination</h1>
+
+<%= form_for @destination do |f| %>
+  <%= f.label :Location %>
+  <%= f.text_field :location %><br>
+  <%= f.label :Description %>
+  <%= f.text_field :description %><br>
+  <%= f.submit %>
+<% end %>
