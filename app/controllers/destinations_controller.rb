@@ -16,5 +16,5 @@ class DestinationsController < ApplicationController
   def destination_params
     params.require(:destination).permit(:location, :description)
   end
-
+  
 end

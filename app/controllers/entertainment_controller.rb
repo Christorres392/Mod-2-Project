@@ -1,2 +1,0 @@
-class EntertainmentController < ApplicationController
-end

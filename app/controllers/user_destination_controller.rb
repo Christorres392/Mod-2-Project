@@ -1,2 +1,0 @@
-class UserDestinationController < ApplicationController
-end
