@@ -5,6 +5,8 @@ class CreateEntertainments < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :address
       t.text :description
+      t.integer :rating
+      t.text :review
       t.timestamps
     end
   end
