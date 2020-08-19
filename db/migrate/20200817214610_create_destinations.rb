@@ -3,6 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[6.0]
     create_table :destinations do |t|
       t.string :location
       t.text :description
+      t.date :founded
       t.timestamps
     end
   end
