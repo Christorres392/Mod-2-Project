@@ -1,5 +1,7 @@
+<div class="welcome">
 <h1>Edit User</h1>
 
+<div class="post">
 <%= form_for @user do |f| %>
     <%=f.label :name%>
     <%=f.text_field :name%><br>
@@ -14,3 +16,5 @@
     <%=f.text_field :hometown, value: @user.hometown.location%><br>
      <%=f.submit%>
 <%end%>
+</div>
+</div>

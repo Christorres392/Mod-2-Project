@@ -1,19 +1,19 @@
-<h1>This is the (<strong><%= @entertainment.name %></strong>) entertainment show page!</h1>
+<div class="welcome">
+<h1>This is the <strong><%= @entertainment.name %></strong> entertainment show page!</h1>
 
 <b>Address:</b>
-<%= @entertainment.address %><br>
+<div class="text_color"><%= @entertainment.address %><br></div>
 <br>
 <b>Rating:</b>
-<%= @entertainment.rating %><br>
+<div class="text_color"><%= @entertainment.rating %><br></div>
 <b>Description:</b>
-<%= @entertainment.description %><br>
+<div class="text_color"><%= @entertainment.description %><br></div>
 <br>
 <b>Reviews:</b></br>
 <% @entertainment.entertainment_reviews.each do |entertainment_review| %>
     <ul>
-    <b><%= entertainment_review.user.username %></b><br>
-    <br>
-    <%= entertainment_review.user_review %>
+    <b><%= entertainment_review.user.username %></b>
+    <div class="text_color"><%= entertainment_review.user_review %></div>
     </ul>
 <% end %>
 
@@ -25,3 +25,4 @@
         <%= f.text_area :user_review %><br>
         <%= f.submit%>
     <% end %>
+</div>
