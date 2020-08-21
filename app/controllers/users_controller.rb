@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         
         @user = User.new
         @user.name = user_params[:name]
+        @user.username = user_params[:username]
         @user.hometown = Destination.find_or_create_by(location: user_params[:hometown])
         @user.birthday = Date.new(user_params['birthday(1i)'].to_i, user_params['birthday(2i)'].to_i, user_params['birthday(3i)'].to_i)
         @user.save
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.name = user_params[:name]
+        @user.username = user_params[:username]
         @user.hometown = Destination.find_or_create_by(location: user_params[:hometown])
         @user.birthday = Date.new(user_params['birthday(1i)'].to_i, user_params['birthday(2i)'].to_i, user_params['birthday(3i)'].to_i)
         @user.save
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-            params.require(:user).permit(:name, :birthday, :hometown)
+            params.require(:user).permit(:name, :username, :birthday, :hometown)
     end
 
 

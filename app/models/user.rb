@@ -46,6 +46,11 @@ class User < ApplicationRecord
          entertainment
      end 
  end
+
+
+
+
+
 end
 
 
