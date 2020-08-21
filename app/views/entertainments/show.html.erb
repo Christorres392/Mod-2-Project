@@ -1,11 +1,10 @@
-
 <h1>This is the (<strong><%= @entertainment.name %></strong>) entertainment show page!</h1>
 
-<b>Address:</b><br>
+<b>Address:</b>
 <%= @entertainment.address %><br>
 <br>
-<b>Rating:</b><br>
-<p><%= @entertainment.rating %></p><br>
+<b>Rating:</b>
+<%= @entertainment.rating %><br>
 <b>Description:</b>
 <%= @entertainment.description %><br>
 <br>
@@ -17,3 +16,12 @@
     <%= entertainment_review.user_review %>
     </ul>
 <% end %>
+
+<h2>Have you been here? Leave a review: </h2>
+
+    <%= form_for @entertainment_review do |f| %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.hidden_field :entertainment_id, value: @entertainment.id %>
+        <%= f.text_area :user_review %><br>
+        <%= f.submit%>
+    <% end %>

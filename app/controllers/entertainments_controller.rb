@@ -6,7 +6,8 @@ class EntertainmentsController < ApplicationController
 
     def show
         @entertainment = Entertainment.find(params[:id])
-        @review = EntertainmentReview.new
+        @entertainment_review = EntertainmentReview.new
+        @user = User.all.sample
     end
 
 end
