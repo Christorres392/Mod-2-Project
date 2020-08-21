@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         @user.username = user_params[:username]
         @user.hometown = Destination.find_or_create_by(location: user_params[:hometown])
         @user.birthday = Date.new(user_params['birthday(1i)'].to_i, user_params['birthday(2i)'].to_i, user_params['birthday(3i)'].to_i)
-        
+        @user.save
        
         redirect_to user_path(@user)
     end
