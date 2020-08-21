@@ -1,0 +1,13 @@
+<h1>Edit User</h1>
+
+<%= form_for @user do |f| %>
+    <%=f.label :name%>
+    <%=f.text_field :name%><br>
+
+    <%=f.label :birthday%>
+    <%=f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 10, end_year: Date.today.year - 100}, {required: true}%><br>
+
+    <%=f.label :hometown%>
+    <%=f.text_field :hometown%><br>
+     <%=f.submit%>
+<%end%>

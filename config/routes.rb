@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :destinations, only: [:index, :new, :create]
   resources :entertainments, only: [:show] 
   resources :restaurants
+  resources :users, only: [:new, :create, :show, :edit, :update]
 
 end
