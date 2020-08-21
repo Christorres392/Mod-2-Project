@@ -5,13 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 5.times do
-#     User.create(name: Faker::Name.name, username: Faker::FunnyName.name, birthday: Faker::DateTime, hometown: Faker::Address.city )
-# end
+5.times do
+    User.create(name: Faker::Name.name, age: Faker::Number.non_zero_digit, username: Faker::Name.name, birthday: Faker::Date.birthday)
+end
 
-# 5.times do
-#     Destination.create(location: Faker::Address.city, description: "Some description of this City.")
-# end
+5.times do
+    Destination.create(location: Faker::Address.city, description: "Some description of this City.", founded: Faker::Date.in_date_period)
+end
+
 
 # 10.times do
 #     Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, description: Faker::Restaurant.description, review: Faker::Restaurant.review, destination_id: Destination.all.sample.id)
