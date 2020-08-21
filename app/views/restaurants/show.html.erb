@@ -6,5 +6,25 @@
 <b>Description:</b>
 <%= @restaurant.description %><br>
 <br>
-<b>Review:</b>
-<%= @restaurant.review %>
+
+
+<b>Reviews:</b></br>
+<% @restaurant.restaurant_reviews.each do |restaurant_review| %>
+    <ul>
+    <b><%= restaurant_review.user.username %></b>
+    <br>
+    <%= restaurant_review.user_review %>
+    </ul>
+<% end %>
+
+<h2>Have you been here? Leave a review: </h2>
+
+    <%= form_for @restaurant_review do |f| %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+        <%= f.text_area :user_review %><br>
+        <%= f.submit%>
+    <% end %>
+
+
+
