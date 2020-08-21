@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_214732) do
+ActiveRecord::Schema.define(version: 2020_08_20_123522) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "location"
     t.text "description"
     t.date "founded"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "entertainment_reviews", force: :cascade do |t|
+    t.text "user_review"
+    t.integer "user_id"
+    t.integer "entertainment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,7 +34,14 @@ ActiveRecord::Schema.define(version: 2020_08_17_214732) do
     t.string "address"
     t.text "description"
     t.integer "rating"
-    t.text "review"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "restaurant_reviews", force: :cascade do |t|
+    t.text "user_review"
+    t.integer "user_id"
+    t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,7 +51,6 @@ ActiveRecord::Schema.define(version: 2020_08_17_214732) do
     t.string "name"
     t.string "address"
     t.text "description"
-    t.text "review"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

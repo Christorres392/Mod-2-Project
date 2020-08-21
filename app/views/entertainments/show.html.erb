@@ -1,9 +1,19 @@
-<h1><%=@entertainment.name%></h1>
-<b>Adress:</b>
-<p><%=@entertainment.address%></p>
-<b>Rating:</b>
-<p><%= @entertainment.rating %></p>
-<b>About: </b>
-<p><%=@entertainment.description%></p>
-<b>Review:</b>
-<p><%= @entertainment.review %></p>
+
+<h1>This is the (<strong><%= @entertainment.name %></strong>) entertainment show page!</h1>
+
+<b>Address:</b><br>
+<%= @entertainment.address %><br>
+<br>
+<b>Rating:</b><br>
+<p><%= @entertainment.rating %></p><br>
+<b>Description:</b>
+<%= @entertainment.description %><br>
+<br>
+<b>Reviews:</b></br>
+<% @entertainment.entertainment_reviews.each do |entertainment_review| %>
+    <ul>
+    <b><%= entertainment_review.user.username %></b><br>
+    <br>
+    <%= entertainment_review.user_review %>
+    </ul>
+<% end %>

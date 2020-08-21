@@ -1,9 +1,13 @@
 class User < ApplicationRecord
-    has_many :user_destinations
-    has_many :destinations, through: :user_destinations
-    belongs_to :hometown, :class_name => 'Destination', :foreign_key => 'hometown_id'
-   
 
+
+   has_many :user_destinations
+   has_many :destinations, through: :user_destinations
+
+   has_many :restaurant_reviews
+   has_many :entertainment_reviews
+
+   belongs_to :hometown, :class_name => 'Destination', :foreign_key => 'hometown_id'
    
    def age
     DateTime.now.year - self.birthday.year
@@ -42,8 +46,6 @@ class User < ApplicationRecord
          entertainment
      end 
  end
-
-
 end
 
 
