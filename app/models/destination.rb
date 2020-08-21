@@ -11,11 +11,11 @@ class Destination < ApplicationRecord
     end
 
     def restaurant_count
-      Restaurant.all.count
+      restaurants.count
     end
 
     def entertainment_count
-      Entertainment.all.count
+      entertainments.count
     end
 
 end
