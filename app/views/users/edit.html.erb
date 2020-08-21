@@ -3,11 +3,15 @@
 <%= form_for @user do |f| %>
     <%=f.label :name%>
     <%=f.text_field :name%><br>
-
+    <br>
+    <%=f.label :username%>
+    <%=f.text_field :username%><br>
+    <br>
     <%=f.label :birthday%>
-    <%=f.date_select :birthday, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 10, end_year: Date.today.year - 100}, {required: true}%><br>
-
+    <%=f.date_select :birthday, {order: [:month, :day, :year], date_separator: "/", prompt: { month: 'Select Month', day: 'Select Day', year: 'Select Year' }, start_year: Date.today.year - 10, end_year: Date.today.year - 100}, {required: true}%><br>
+    <br>
     <%=f.label :hometown%>
-    <%=f.text_field :hometown%><br>
+    <%=f.text_field :hometown, value: @user.hometown.location%><br>
+    <br>
      <%=f.submit%>
 <%end%>
