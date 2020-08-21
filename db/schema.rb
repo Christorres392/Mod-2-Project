@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(version: 2020_08_17_214732) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
     t.string "username"
     t.date "birthday"
-    t.string "hometown"
+    t.integer "hometown_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

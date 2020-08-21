@@ -13,12 +13,23 @@ end
     Destination.create(location: Faker::Address.city, description: "Some description of this City.", founded: Faker::Date.in_date_period)
 end
 
-5.times do
-    Restaurant.create(name: Faker::Name.name, address: Faker::Address.street_address, description: Faker::Restaurant.description, review: Faker::Restaurant.review, destination_id: Destination.all.sample.id)
-end
+
+# 10.times do
+#     Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, description: Faker::Restaurant.description, review: Faker::Restaurant.review, destination_id: Destination.all.sample.id)
+# end
 
 Entertainment.create(name: "Jim's Bowling Alley", address: Faker::Address.street_address, description: "Come bowl a Strike.", destination_id: Destination.all.sample.id)
 Entertainment.create(name: "Rock Climbing", address: Faker::Address.street_address, description: "Climb rocks.", destination_id: Destination.all.sample.id)
 Entertainment.create(name: "Papa Georgio's Casino", address: Faker::Address.street_address, description: "Gamble your life away $", destination_id: Destination.all.sample.id)
 Entertainment.create(name: "Paint Ball", address: Faker::Address.street_address, description: "Shoot people legally with paint ball guns.", destination_id: Destination.all.sample.id)
 Entertainment.create(name: "Paint Drying", address: Faker::Address.street_address, description: "Come watch paint dry!", destination_id: Destination.all.sample.id)
+
+
+# Destination.create(location: "San Antonio", description: "Best city ever!")
+5.times do
+Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.street_address, description: Faker::Restaurant.description, review: Faker::Restaurant.review, destination_id: 3)
+end
+
+5.times do
+Entertainment.create(name: "Jim's Bowling Alley", address: Faker::Address.street_address, description: "Come bowl a Strike.", destination_id: 3)
+end
