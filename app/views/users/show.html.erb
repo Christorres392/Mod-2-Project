@@ -1,0 +1,20 @@
+
+
+<h1>Welcome <%=@user.name%>!</h1>
+<%= link_to "Edit Profile", edit_user_path(@user)%>
+
+<p><%=@user.age_message%></p>
+
+Restaurants near you:
+<%@user.hometown_restaurants.each do |restaurant|%>
+<li><%=restaurant.name%></li>
+<%end%>
+<br>
+Entertainment near you:
+<%@user.hometown_entertainments.each do |entertainment|%>
+<li><%=entertainment.name%></li>
+<%end%>
+
+
+ <%# <%if @user.age_message == "Happy Birthday #{self.name}!!!"%>
+

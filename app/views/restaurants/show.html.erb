@@ -3,11 +3,12 @@
 <b>Address:</b>
 <%= @restaurant.address %><br>
 <br>
+<b>Rating:</b>
+<%= @restaurant.rating %><br>
+<p></p>
 <b>Description:</b>
 <%= @restaurant.description %><br>
 <br>
-
-
 <b>Reviews:</b></br>
 <% @restaurant.restaurant_reviews.each do |restaurant_review| %>
     <ul>
@@ -25,6 +26,3 @@
         <%= f.text_area :user_review %><br>
         <%= f.submit%>
     <% end %>
-
-
-

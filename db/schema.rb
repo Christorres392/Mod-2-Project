@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_123522) do
     t.string "name"
     t.string "username"
     t.date "birthday"
-    t.string "hometown"
+    t.integer "hometown_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

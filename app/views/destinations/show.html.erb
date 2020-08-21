@@ -1,1 +1,23 @@
 <h1>Destination Show Page</h1>
+<b>Location: <%= @destination.location %><br></b>
+<b>Description: <%= @destination.description %><br></b>
+<b>Founded: <%= @destination.founded %><br></b>
+<b>Destination was established <%= @destination.dest_age %> years ago</b><br>
+
+<p></p>
+
+<b>Restaurants:</b><br>
+<%= @destination.restaurant_count %> restaurants near you
+<ul>
+<% Restaurant.all.each do |r| %>
+  <li><%= link_to r.name, restaurant_path(r) %></li>
+<% end %>
+</ul>
+
+<b>Entertainments:</b><br>
+<%= @destination.entertainment_count %> entertainments near you
+<ul>
+  <% Entertainment.all.each do |e| %>
+    <li><%=link_to e.name, entertainment_path(e) %></li>
+  <% end %>
+</ul>
