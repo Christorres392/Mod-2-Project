@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do
-    User.create(name: Faker::Name.name, username: Faker::FunnyName.name, birthday: Faker::Date.birthday(min_age: 11, max_age: 80), hometown: Faker::Address.city )
+    User.create(name: Faker::Name.name, username: Faker::FunnyName.name, birthday: Faker::Date.birthday(min_age: 11, max_age: 80), hometown: Destination.all.sample)
 end
 
 5.times do
