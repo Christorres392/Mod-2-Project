@@ -1,19 +1,19 @@
-<h1>This is the (<strong><%= @restaurant.name %></strong>) restaurant show page!</h1>
+<div class="welcome">
+<h1>This is the <strong><%= @restaurant.name %></strong> restaurant show page!</h1>
 
 <b>Address:</b>
-<%= @restaurant.address %><br>
+<div class="text_color"><%= @restaurant.address %><br></div>
 <br>
 <b>Rating:</b>
-<%= @restaurant.rating %><br>
+<div class="text_color"><%= @restaurant.rating %><br></div>
 <b>Description:</b>
-<%= @restaurant.description %><br>
+<div class="text_color"><%= @restaurant.description %><br></div>
 <br>
 <b>Reviews:</b></br>
 <% @restaurant.restaurant_reviews.each do |restaurant_review| %>
     <ul>
     <b><%= restaurant_review.user.username %></b>
-    <br>
-    <%= restaurant_review.user_review %>
+    <div class="text_color"><%= restaurant_review.user_review %></div>
     </ul>
 <% end %>
 
@@ -25,3 +25,4 @@
         <%= f.text_area :user_review %><br>
         <%= f.submit%>
     <% end %>
+</div>

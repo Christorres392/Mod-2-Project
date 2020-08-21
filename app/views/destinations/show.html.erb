@@ -1,23 +1,19 @@
+<div class="welcome">
 <h1>Destination Show Page</h1>
-<b>Location: <%= @destination.location %><br></b>
-<b>Description: <%= @destination.description %><br></b>
-<b>Founded: <%= @destination.founded %><br></b>
-<b>Destination was established <%= @destination.dest_age %> years ago</b><br>
-
+<b>Location:</b> <div class="text_color"><%= @destination.location %></div><br>
+<b>Description:</b> <div class="text_color"><%= @destination.description %></div><br>
+<b>Founded:</b> <div class="text_color"><%= @destination.founded %>. This destination was established <%= @destination.dest_age %> years ago</div><br>
 <p></p>
 
 <b>Restaurants:</b><br>
-<%= @destination.restaurant_count %> restaurants near you
-<ul>
+<div class="text_color"><%="There are " + @destination.restaurant_count.to_s + " restaurants near you! Here's a list:"%></div> 
 <% @destination.restaurants.each do |r| %>
   <li><%= link_to r.name, restaurant_path(r) %></li>
 <% end %>
-</ul>
 
 <b>Entertainments:</b><br>
-<%= @destination.entertainment_count %> entertainments near you
-<ul>
+<div class="text_color"><%="There are " + @destination.entertainment_count.to_s + " entertainments near you! Here's a list:" %>
   <% @destination.entertainments.each do |e| %>
     <li><%=link_to e.name, entertainment_path(e) %></li>
   <% end %>
-</ul>
+</div>

@@ -32,6 +32,10 @@ button {
     text-decoration: none;
 }
 
+strong {
+    color: white;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -79,7 +83,13 @@ button:hover {
     margin: 20px 50px 20px 50px;
 }
 
+.text_color {
+    color: whitesmoke;
+}
 
+.post input {
+    color: white;
+}
 /* * {
    text-align: center;
  } */
