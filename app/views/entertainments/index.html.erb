@@ -1,0 +1,7 @@
+<h1>Entertainments</h1>
+
+<ul>
+  <% @entertainments.each do |entertainment| %>
+    <li><%= link_to entertainment.name, entertainment_path(entertainment) %></li>
+  <% end %>
+</ul>
